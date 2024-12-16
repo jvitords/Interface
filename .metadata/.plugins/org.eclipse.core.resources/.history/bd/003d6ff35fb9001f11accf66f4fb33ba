@@ -1,0 +1,57 @@
+package model.entities;
+
+import java.time.LocalDateTime;
+
+public class AluguelDoVeiculo { // CarRental
+
+	private LocalDateTime dataDeEntrada;
+	private LocalDateTime dataDeSaiada;
+	private Veiculo veiculo;
+	private Fatura fatura; 
+	
+	public AluguelDoVeiculo(){
+	}
+
+	public AluguelDoVeiculo(LocalDateTime dataDeEntrada, LocalDateTime dataDeSaiada, Veiculo veiculo) {
+		super();
+		this.dataDeEntrada = dataDeEntrada;
+		this.dataDeSaiada = dataDeSaiada;
+		this.veiculo = veiculo;
+	}
+
+	
+
+	public LocalDateTime getDataDeEntrada() {
+		return dataDeEntrada;
+	}
+
+	public void setDataDeEntrada(LocalDateTime dataDeEntrada) {
+		this.dataDeEntrada = dataDeEntrada;
+	}
+
+	public Veiculo getVeiculo() {
+		return veiculo;
+	}
+
+	public void setVeiculo(Veiculo veiculo) {
+		this.veiculo = veiculo;
+	}
+
+	public Fatura getFatura() {
+		return fatura;
+	}
+
+	public void setFatura(Fatura fatura) {
+		this.fatura = fatura;
+	}
+
+	public void setDataDeSaiada(LocalDateTime dataDeSaiada) {
+		this.dataDeSaiada = dataDeSaiada;
+	}
+
+	public LocalDateTime getDataDeSaiada() {
+		return dataDeSaiada;
+	}
+	
+	
+}

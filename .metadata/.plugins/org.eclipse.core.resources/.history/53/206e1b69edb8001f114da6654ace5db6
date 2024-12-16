@@ -1,0 +1,35 @@
+package application;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+import model.entities.AluguelDoVeiculo;
+import model.entities.Veiculo;
+
+public class Program {
+
+	public static void main(String[] args) {
+
+		Scanner digitar = new Scanner(System.in);
+		DateTimeFormatter formatoDaData = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+		System.out.println("===== Cadastro do veiculo =====\n");
+		String modeloDoVeiculo = "Celta";
+		//System.out.print("Modelo: " + modeloDoVeiculo);
+		
+		String digitarDataDeEntrada = "25/08/2024 10:30";
+		String digitarDataDeSaida = "27/08/2024 11:40";
+		//System.out.print("Data de entrada: " + digitarDataDeEntrada);
+		//System.out.print("Data de saida: " + digitarDataDeSaida);
+		
+		LocalDateTime entrada = LocalDateTime.parse(digitarDataDeEntrada, formatoDaData);
+		LocalDateTime saida = LocalDateTime.parse(digitarDataDeSaida, formatoDaData);
+
+		
+		AluguelDoVeiculo aluguel = new AluguelDoVeiculo(entrada, saida, new Veiculo(modeloDoVeiculo)); 
+		System.out.println("\n---\n-");
+		System.out.println(aluguel.getDataDeEntrada() + ", " + aluguel.getDataDeSaiada() + ", " + aluguel.getVeiculo().getModelo());
+	}
+
+}

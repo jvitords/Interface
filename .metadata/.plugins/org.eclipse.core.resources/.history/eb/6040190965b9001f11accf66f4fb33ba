@@ -1,0 +1,48 @@
+package model.services;
+
+import model.entities.AluguelDoVeiculo;
+import model.entities.Fatura;
+
+public class ServicoDeAluguel {
+
+	private Double precoPorHora;
+	private Double precoPorDia;
+	private TaxaDoBrasil taxaDoBrasil;
+	
+	public ServicoDeAluguel(Double precoPorHora, Double precoPorDia, TaxaDoBrasil taxaDoBrasil) {
+		this.precoPorHora = precoPorHora;
+		this.precoPorDia = precoPorDia;
+		this.taxaDoBrasil = taxaDoBrasil;
+	}
+	
+	public void gerarFatura(AluguelDoVeiculo aluguelDoVeiculo) {
+		
+		aluguelDoVeiculo.setFatura(new Fatura(50.0, 10.0));
+	}
+
+	public Double getValorBasico() {
+		return precoPorHora;
+	}
+
+	public void setValorBasico(Double valorBasico) {
+		this.precoPorHora = valorBasico;
+	}
+
+	public Double getTaxa() {
+		return taxa;
+	}
+
+	public void setTaxa(Double taxa) {
+		this.taxa = taxa;
+	}
+
+	public TaxaDoBrasil getTaxaDoBrasil() {
+		return taxaDoBrasil;
+	}
+
+	public void setTaxaDoBrasil(TaxaDoBrasil taxaDoBrasil) {
+		this.taxaDoBrasil = taxaDoBrasil;
+	}
+	
+	
+}

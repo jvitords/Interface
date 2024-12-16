@@ -1,0 +1,47 @@
+package model.entities;
+
+public class Fatura { // invoice
+	
+	private Double pagamentoBasicoDouble;
+	private Double taxa;
+	private AluguelDoVeiculo aluguel; 
+	
+	public Fatura() {
+	}
+
+	public Fatura(Double pagamentoBasicoDouble, Double taxa, AluguelDoVeiculo aluguel) {
+		this.pagamentoBasicoDouble = pagamentoBasicoDouble;
+		this.taxa = taxa;
+		this.aluguel = aluguel;
+	}
+
+	public Double getPagamentoBasicoDouble() {
+		return pagamentoBasicoDouble;
+	}
+
+	public void setPagamentoBasicoDouble(Double pagamentoBasicoDouble) {
+		this.pagamentoBasicoDouble = pagamentoBasicoDouble;
+	}
+
+	public Double getTaxa() {
+		return taxa;
+	}
+
+	public void setTaxa(Double taxa) {
+		this.taxa = taxa;
+	}
+
+	public AluguelDoVeiculo getAluguel() {
+		return aluguel;
+	}
+
+	public void setAluguel(AluguelDoVeiculo aluguel) {
+		this.aluguel = aluguel;
+	}
+	
+	public Double pagamentoTotal(Double pagamentoBasico, Double taxa) {
+		
+		return pagamentoBasico - taxa;
+	}
+
+}
